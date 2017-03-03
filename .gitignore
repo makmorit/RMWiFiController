@@ -26,3 +26,6 @@ funclist
 *.lnk
 *.hxl
 
+# EAGLE
+*.lck
+

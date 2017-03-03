@@ -1,0 +1,16 @@
+[Eagle]
+Version="07 05 00"
+Platform="Mac OS X"
+Serial="74090A8008-LS-WLM-1CS"
+Globals="Globals"
+Desktop="Desktop"
+
+[Globals]
+AutoSaveProject=1
+UsedLibrary="Connectors.lbr"
+UsedLibrary="Generic.lbr"
+UsedLibrary="Parts.lbr"
+UsedLibrary="Supply.lbr"
+
+[Desktop]
+Screen="1440 900"
