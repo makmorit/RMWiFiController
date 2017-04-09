@@ -477,7 +477,7 @@ pin2, 4：GND</description>
 </device>
 </devices>
 </deviceset>
-<deviceset name="ROTARY_ENCODER" prefix="U">
+<deviceset name="ROTARY_ENCODER" prefix="CN">
 <description>&lt;b&gt;ロータリーエンコーダ&lt;/b&gt;&lt;p&gt;
 RE160F-40E3-20A-24P&lt;br&gt;
 ・１回転２４パルス出力（各相）&lt;br&gt;
