@@ -8,6 +8,14 @@
 *.pyc
 *.bak
 
+# EAGLE
+*.lck
+*.l#?
+*.s#?
+*.b#?
+
+*.epf
+
 # PIC16F1938
 funclist
 *.lst
@@ -25,7 +33,4 @@ funclist
 *.sym
 *.lnk
 *.hxl
-
-# EAGLE
-*.lck
 
