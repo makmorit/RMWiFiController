@@ -4,14 +4,6 @@
 #include <ESP8266WiFi.h>
 #include <SoftwareSerial.h>
 
-#define PIN_LED_HCHECK 2
-#define PIN_LED_CONNECTING 4
-#define PIN_SWSERIAL_RX 14
-#define PIN_SWSERIAL_TX 12
-#define PIN_SWSERIAL_GND 13
-#define GPIO_HIGH 1
-#define GPIO_LOW 0
-
 class RMWiFiServer {
 public:
 	RMWiFiServer();
