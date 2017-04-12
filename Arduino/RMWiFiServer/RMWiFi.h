@@ -1,12 +1,6 @@
 #ifndef __RMWIFI_H
 #define __RMWIFI_H
 
-#define WIFI_SSID  "xxxxxxxx"
-#define WIFI_PSWD "xxxxxxxx"
-
-#define WIFI_SVR_IPADDR_FN  (IPAddress(192,168,100,111))
-#define WIFI_SVR_PORTNO  80
-
 #define BAUD_RATE  19200
 #define WIFI_SVR_BEGIN_INTMS  250
 #define WIFI_SVR_POLLING_INTMS  500
