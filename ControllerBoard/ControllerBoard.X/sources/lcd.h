@@ -6,8 +6,8 @@ unsigned char lcd_upper_buf[17];
 unsigned char lcd_lower_buf[17];
 
 // 関数
-void LCD_init();
-void LCD_print_upper();
-void LCD_print_lower();
+void lcd_init();
+void lcd_print_upper();
+void lcd_print_lower();
 
 #endif // __LCD_H
