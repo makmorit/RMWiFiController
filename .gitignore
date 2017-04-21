@@ -34,3 +34,5 @@ funclist
 *.lnk
 *.hxl
 
+/ControllerBoard/ControllerBoard.X/nbproject/private/
+/ControllerBoard/ControllerBoard.X/dist/default/
