@@ -80,9 +80,9 @@ void setup_uart()
 }
 
 //
-// CCPの設定
+// TIMER2 (CCP) の設定
 //
-void setup_ccp()
+void setup_timer2()
 {
     //
     // タイマー２の設定を行う
@@ -92,13 +92,6 @@ void setup_ccp()
     CCP1CON = 0b1100; // PWM
     CCPR1L  = 0;      // CCP1 デューティ設定
     PR2     = 160;    // タイマー２周期レジスターに初期値をセット
-}
-
-void set_ccp(unsigned char v) 
-{
-    // CCP に値（デューティー比）を設定
-    //   v = 0-100 の値
-    CCPR1L = PR2 * v / 100;
 }
 
 //

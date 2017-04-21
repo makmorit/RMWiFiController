@@ -3,6 +3,7 @@
 #include "lcd.h"
 #include "rotenc.h"
 #include "process.h"
+#include "timert2.h"
 
 // ヘルスチェックカウンター
 static unsigned char hcheck_cnt;
@@ -37,7 +38,7 @@ void manual_mode_init()
     rsw_counter_value = 0;
 
     // CCPの値を０とする
-    set_ccp(rsw_counter_value);
+    timer2_set_ccpr1(rsw_counter_value);
 }
 
 //
@@ -55,7 +56,7 @@ void reverse_on_manual_mode()
 void process_on_manual_mode()
 {
     // ロータリーエンコーダーの現在値をそのまま設定
-    set_ccp(rsw_counter_value);
+    timer2_set_ccpr1(rsw_counter_value);
 
     // 現在のDutyとヘルスチェックカウンターを表示
     print_duty_and_hchk(rsw_counter_value, hcheck_cnt);

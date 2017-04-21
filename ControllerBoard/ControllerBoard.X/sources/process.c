@@ -5,6 +5,7 @@
 #include "process.h"
 #include "manualmode.h"
 #include "uart.h"
+#include "timer0.h"
 
 //
 // 基板上のボタン押下時の処理
@@ -69,7 +70,7 @@ static int process_on_button_press()
 //
 // UARTリモコンコマンド受信時の処理
 //
-void process_on_uart_command(unsigned char c)
+static void process_on_uart_command(unsigned char c)
 {
     switch (c) {
     case 'A':
@@ -120,7 +121,7 @@ static unsigned char atouc(char *value)
 //
 // UARTに入力された内容を解析する
 //
-void parse_uart_input()
+static void parse_uart_input()
 {
     unsigned char c;
 
@@ -166,7 +167,7 @@ void parse_uart_input()
 static unsigned long btn_push_prevent_cnt;
 
 // 割込みごとに処理（3.2768 ms）
-void switch_prevent()
+static void switch_prevent()
 {
     // カウンターが０の時は終了
     if (0 == btn_push_prevent_cnt) {
@@ -178,7 +179,7 @@ void switch_prevent()
 }
 
 // イベントループ内の最後のステップで処理
-void switch_detection()
+static void switch_detection()
 {
     // カウンターが０でない時は終了
     if (0 < btn_push_prevent_cnt) {
@@ -197,8 +198,8 @@ void switch_detection()
 //
 // センサー検知処理
 //
-unsigned char reducing_sensor_flg;
-unsigned char stopping_sensor_flg;
+static unsigned char reducing_sensor_flg;
+static unsigned char stopping_sensor_flg;
 
 static void process_on_REDUCING_SENSOR()
 {
@@ -209,7 +210,7 @@ static void process_on_STOPPING_SENSOR()
 }
 
 // 割込みごとに処理（3.2768 ms）
-void sensor_detection()
+static void sensor_detection()
 {
     // レイアウト制御デバイス以外の場合は処理しない
     if (devide_type != DEVTYP_LAYOUT) {
@@ -238,7 +239,7 @@ void sensor_detection()
 }
 
 // 約 0.1 秒ごとに処理（3.2768ms × 30回）
-void process_on_100m_second()
+static void process_on_100m_second()
 {
     switch (main_mode) {
     case 0:
@@ -249,7 +250,7 @@ void process_on_100m_second()
 }
 
 // 約 1.0 秒ごとに処理（3.2768ms × 305回）
-void process_on_one_second()
+static void process_on_one_second()
 {
     switch (main_mode) {
     case 0:
@@ -259,8 +260,18 @@ void process_on_one_second()
     }
 }
 
+// ロータリーエンコーダーの現在値変更時の処理
+static void process_on_change_rotenc_val()
+{
+    // 値が変更時、UARTコマンドを送信する
+    printf("D%u\r\n", rsw_counter_value);
+}
+
 void process_init()
 {
+    // 動作モードを設定
+    set_device_mode();
+
     // ローカル変数の初期化
     btn_push_prevent_cnt = 0;
     reducing_sensor_flg = 0;
@@ -270,9 +281,43 @@ void process_init()
     manual_mode_init();
 }
 
-// ロータリーエンコーダーの現在値変更時の処理
-void process_on_change_rotenc_val()
+//
+// 主処理
+//
+void process()
 {
-    // 値が変更時、UARTコマンドを送信する
-    printf("D%u\r\n", rsw_counter_value);
+    // UART入力を優先させる
+    parse_uart_input();
+
+    // 割込みごとに処理（3.2768 ms）
+    if (tmr0_toggle == 1) {
+        // ロータリーエンコーダーによる検知処理
+        if (rotenc_detection() != 0) {
+            process_on_change_rotenc_val();
+        }
+        // スイッチ連続検知抑止
+        switch_prevent();
+        tmr0_toggle = 0;
+        // センサー検知処理
+        sensor_detection();
+    }
+
+    // 約 0.1 秒ごとに処理（3.2768ms × 30回）
+    if (tmr0_total_cnt_100m > 30) {
+        // カウンターを初期化
+        tmr0_total_cnt_100m = 0;
+        // イベントごとの処理（モード／ステータス遷移）を行う
+        process_on_100m_second();
+    }
+
+    // 約 1.0 秒ごとに処理（3.2768ms × 305回）
+    if (tmr0_total_cnt_1s > 305) {
+        // カウンターを初期化
+        tmr0_total_cnt_1s = 0;
+        // イベントごとの処理を行う
+        process_on_one_second();
+    }
+
+    // スイッチ検知処理
+    switch_detection();
 }

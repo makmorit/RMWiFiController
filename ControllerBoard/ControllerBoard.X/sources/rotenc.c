@@ -7,6 +7,8 @@
 //
 unsigned char rotenc_detection()
 {
+    rsw_curr_value = ROT_ENC_CURVAL;
+
     switch (rsw_status_value) {
     case 0 :
         if (rsw_curr_value == ROT_ENC_SIGNAL_UP) {

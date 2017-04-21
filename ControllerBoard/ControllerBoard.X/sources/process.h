@@ -10,14 +10,7 @@ unsigned char main_mode = 0;
 //
 // 関数
 //
-void switch_prevent();
-void switch_detection();
-void sensor_detection();
-void parse_uart_input();
-void process_on_uart_command(unsigned char c);
-void process_on_100m_second();
-void process_on_one_second();
 void process_init();
-void process_on_change_rotenc_val();
+void process();
 
 #endif // __PROCESS_H

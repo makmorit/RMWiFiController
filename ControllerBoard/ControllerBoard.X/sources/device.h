@@ -73,11 +73,9 @@ unsigned char devide_type;
 // 関数
 void setup_port();
 void setup_timer0();
-
-void setup_ccp();
+void setup_timer2();
 void setup_uart();
 
-void set_ccp(unsigned char v);
 void set_device_mode();
 
 
