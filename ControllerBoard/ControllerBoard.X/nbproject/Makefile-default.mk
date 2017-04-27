@@ -51,17 +51,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=sources/main.c sources/device.c sources/process.c sources/lcd.c sources/rotenc.c sources/manualmode.c sources/uart.c sources/timer0.c sources/timer2.c
+SOURCEFILES_QUOTED_IF_SPACED=sources/device.c sources/lcd.c sources/main.c sources/manualmode.c sources/process.c sources/rotenc.c sources/timer0.c sources/timer2.c sources/uart.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/sources/main.p1 ${OBJECTDIR}/sources/device.p1 ${OBJECTDIR}/sources/process.p1 ${OBJECTDIR}/sources/lcd.p1 ${OBJECTDIR}/sources/rotenc.p1 ${OBJECTDIR}/sources/manualmode.p1 ${OBJECTDIR}/sources/uart.p1 ${OBJECTDIR}/sources/timer0.p1 ${OBJECTDIR}/sources/timer2.p1
-POSSIBLE_DEPFILES=${OBJECTDIR}/sources/main.p1.d ${OBJECTDIR}/sources/device.p1.d ${OBJECTDIR}/sources/process.p1.d ${OBJECTDIR}/sources/lcd.p1.d ${OBJECTDIR}/sources/rotenc.p1.d ${OBJECTDIR}/sources/manualmode.p1.d ${OBJECTDIR}/sources/uart.p1.d ${OBJECTDIR}/sources/timer0.p1.d ${OBJECTDIR}/sources/timer2.p1.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/sources/device.p1 ${OBJECTDIR}/sources/lcd.p1 ${OBJECTDIR}/sources/main.p1 ${OBJECTDIR}/sources/manualmode.p1 ${OBJECTDIR}/sources/process.p1 ${OBJECTDIR}/sources/rotenc.p1 ${OBJECTDIR}/sources/timer0.p1 ${OBJECTDIR}/sources/timer2.p1 ${OBJECTDIR}/sources/uart.p1
+POSSIBLE_DEPFILES=${OBJECTDIR}/sources/device.p1.d ${OBJECTDIR}/sources/lcd.p1.d ${OBJECTDIR}/sources/main.p1.d ${OBJECTDIR}/sources/manualmode.p1.d ${OBJECTDIR}/sources/process.p1.d ${OBJECTDIR}/sources/rotenc.p1.d ${OBJECTDIR}/sources/timer0.p1.d ${OBJECTDIR}/sources/timer2.p1.d ${OBJECTDIR}/sources/uart.p1.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/sources/main.p1 ${OBJECTDIR}/sources/device.p1 ${OBJECTDIR}/sources/process.p1 ${OBJECTDIR}/sources/lcd.p1 ${OBJECTDIR}/sources/rotenc.p1 ${OBJECTDIR}/sources/manualmode.p1 ${OBJECTDIR}/sources/uart.p1 ${OBJECTDIR}/sources/timer0.p1 ${OBJECTDIR}/sources/timer2.p1
+OBJECTFILES=${OBJECTDIR}/sources/device.p1 ${OBJECTDIR}/sources/lcd.p1 ${OBJECTDIR}/sources/main.p1 ${OBJECTDIR}/sources/manualmode.p1 ${OBJECTDIR}/sources/process.p1 ${OBJECTDIR}/sources/rotenc.p1 ${OBJECTDIR}/sources/timer0.p1 ${OBJECTDIR}/sources/timer2.p1 ${OBJECTDIR}/sources/uart.p1
 
 # Source Files
-SOURCEFILES=sources/main.c sources/device.c sources/process.c sources/lcd.c sources/rotenc.c sources/manualmode.c sources/uart.c sources/timer0.c sources/timer2.c
+SOURCEFILES=sources/device.c sources/lcd.c sources/main.c sources/manualmode.c sources/process.c sources/rotenc.c sources/timer0.c sources/timer2.c sources/uart.c
 
 
 CFLAGS=
@@ -83,18 +83,10 @@ ifneq ($(INFORMATION_MESSAGE), )
 endif
 	${MAKE}  -f nbproject/Makefile-default.mk dist/${CND_CONF}/${IMAGE_TYPE}/ControllerBoard.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
 
-MP_PROCESSOR_OPTION=16F1938
+MP_PROCESSOR_OPTION=16F18857
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: compile
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
-${OBJECTDIR}/sources/main.p1: sources/main.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/sources" 
-	@${RM} ${OBJECTDIR}/sources/main.p1.d 
-	@${RM} ${OBJECTDIR}/sources/main.p1 
-	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  -D__DEBUG=1 --debugger=pickit3  --double=24 --float=24 --opt=+asm,+asmfile,-speed,+space,-debug,-local --addrqual=ignore --mode=free -P -N255 --warn=-3 --asmlist -DXPRJ_default=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-osccal,-resetbits,-download,-stackcall,+clib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/sources/main.p1  sources/main.c 
-	@-${MV} ${OBJECTDIR}/sources/main.d ${OBJECTDIR}/sources/main.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/sources/main.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
 ${OBJECTDIR}/sources/device.p1: sources/device.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/sources" 
 	@${RM} ${OBJECTDIR}/sources/device.p1.d 
@@ -102,14 +94,6 @@ ${OBJECTDIR}/sources/device.p1: sources/device.c  nbproject/Makefile-${CND_CONF}
 	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  -D__DEBUG=1 --debugger=pickit3  --double=24 --float=24 --opt=+asm,+asmfile,-speed,+space,-debug,-local --addrqual=ignore --mode=free -P -N255 --warn=-3 --asmlist -DXPRJ_default=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-osccal,-resetbits,-download,-stackcall,+clib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/sources/device.p1  sources/device.c 
 	@-${MV} ${OBJECTDIR}/sources/device.d ${OBJECTDIR}/sources/device.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/sources/device.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
-${OBJECTDIR}/sources/process.p1: sources/process.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/sources" 
-	@${RM} ${OBJECTDIR}/sources/process.p1.d 
-	@${RM} ${OBJECTDIR}/sources/process.p1 
-	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  -D__DEBUG=1 --debugger=pickit3  --double=24 --float=24 --opt=+asm,+asmfile,-speed,+space,-debug,-local --addrqual=ignore --mode=free -P -N255 --warn=-3 --asmlist -DXPRJ_default=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-osccal,-resetbits,-download,-stackcall,+clib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/sources/process.p1  sources/process.c 
-	@-${MV} ${OBJECTDIR}/sources/process.d ${OBJECTDIR}/sources/process.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/sources/process.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 ${OBJECTDIR}/sources/lcd.p1: sources/lcd.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/sources" 
@@ -119,13 +103,13 @@ ${OBJECTDIR}/sources/lcd.p1: sources/lcd.c  nbproject/Makefile-${CND_CONF}.mk
 	@-${MV} ${OBJECTDIR}/sources/lcd.d ${OBJECTDIR}/sources/lcd.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/sources/lcd.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/sources/rotenc.p1: sources/rotenc.c  nbproject/Makefile-${CND_CONF}.mk
+${OBJECTDIR}/sources/main.p1: sources/main.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/sources" 
-	@${RM} ${OBJECTDIR}/sources/rotenc.p1.d 
-	@${RM} ${OBJECTDIR}/sources/rotenc.p1 
-	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  -D__DEBUG=1 --debugger=pickit3  --double=24 --float=24 --opt=+asm,+asmfile,-speed,+space,-debug,-local --addrqual=ignore --mode=free -P -N255 --warn=-3 --asmlist -DXPRJ_default=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-osccal,-resetbits,-download,-stackcall,+clib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/sources/rotenc.p1  sources/rotenc.c 
-	@-${MV} ${OBJECTDIR}/sources/rotenc.d ${OBJECTDIR}/sources/rotenc.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/sources/rotenc.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	@${RM} ${OBJECTDIR}/sources/main.p1.d 
+	@${RM} ${OBJECTDIR}/sources/main.p1 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  -D__DEBUG=1 --debugger=pickit3  --double=24 --float=24 --opt=+asm,+asmfile,-speed,+space,-debug,-local --addrqual=ignore --mode=free -P -N255 --warn=-3 --asmlist -DXPRJ_default=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-osccal,-resetbits,-download,-stackcall,+clib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/sources/main.p1  sources/main.c 
+	@-${MV} ${OBJECTDIR}/sources/main.d ${OBJECTDIR}/sources/main.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/sources/main.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 ${OBJECTDIR}/sources/manualmode.p1: sources/manualmode.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/sources" 
@@ -135,13 +119,21 @@ ${OBJECTDIR}/sources/manualmode.p1: sources/manualmode.c  nbproject/Makefile-${C
 	@-${MV} ${OBJECTDIR}/sources/manualmode.d ${OBJECTDIR}/sources/manualmode.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/sources/manualmode.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/sources/uart.p1: sources/uart.c  nbproject/Makefile-${CND_CONF}.mk
+${OBJECTDIR}/sources/process.p1: sources/process.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/sources" 
-	@${RM} ${OBJECTDIR}/sources/uart.p1.d 
-	@${RM} ${OBJECTDIR}/sources/uart.p1 
-	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  -D__DEBUG=1 --debugger=pickit3  --double=24 --float=24 --opt=+asm,+asmfile,-speed,+space,-debug,-local --addrqual=ignore --mode=free -P -N255 --warn=-3 --asmlist -DXPRJ_default=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-osccal,-resetbits,-download,-stackcall,+clib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/sources/uart.p1  sources/uart.c 
-	@-${MV} ${OBJECTDIR}/sources/uart.d ${OBJECTDIR}/sources/uart.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/sources/uart.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	@${RM} ${OBJECTDIR}/sources/process.p1.d 
+	@${RM} ${OBJECTDIR}/sources/process.p1 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  -D__DEBUG=1 --debugger=pickit3  --double=24 --float=24 --opt=+asm,+asmfile,-speed,+space,-debug,-local --addrqual=ignore --mode=free -P -N255 --warn=-3 --asmlist -DXPRJ_default=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-osccal,-resetbits,-download,-stackcall,+clib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/sources/process.p1  sources/process.c 
+	@-${MV} ${OBJECTDIR}/sources/process.d ${OBJECTDIR}/sources/process.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/sources/process.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/sources/rotenc.p1: sources/rotenc.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/sources" 
+	@${RM} ${OBJECTDIR}/sources/rotenc.p1.d 
+	@${RM} ${OBJECTDIR}/sources/rotenc.p1 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  -D__DEBUG=1 --debugger=pickit3  --double=24 --float=24 --opt=+asm,+asmfile,-speed,+space,-debug,-local --addrqual=ignore --mode=free -P -N255 --warn=-3 --asmlist -DXPRJ_default=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-osccal,-resetbits,-download,-stackcall,+clib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/sources/rotenc.p1  sources/rotenc.c 
+	@-${MV} ${OBJECTDIR}/sources/rotenc.d ${OBJECTDIR}/sources/rotenc.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/sources/rotenc.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 ${OBJECTDIR}/sources/timer0.p1: sources/timer0.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/sources" 
@@ -159,15 +151,15 @@ ${OBJECTDIR}/sources/timer2.p1: sources/timer2.c  nbproject/Makefile-${CND_CONF}
 	@-${MV} ${OBJECTDIR}/sources/timer2.d ${OBJECTDIR}/sources/timer2.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/sources/timer2.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-else
-${OBJECTDIR}/sources/main.p1: sources/main.c  nbproject/Makefile-${CND_CONF}.mk
+${OBJECTDIR}/sources/uart.p1: sources/uart.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/sources" 
-	@${RM} ${OBJECTDIR}/sources/main.p1.d 
-	@${RM} ${OBJECTDIR}/sources/main.p1 
-	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  --double=24 --float=24 --opt=+asm,+asmfile,-speed,+space,-debug,-local --addrqual=ignore --mode=free -P -N255 --warn=-3 --asmlist -DXPRJ_default=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-osccal,-resetbits,-download,-stackcall,+clib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/sources/main.p1  sources/main.c 
-	@-${MV} ${OBJECTDIR}/sources/main.d ${OBJECTDIR}/sources/main.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/sources/main.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	@${RM} ${OBJECTDIR}/sources/uart.p1.d 
+	@${RM} ${OBJECTDIR}/sources/uart.p1 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  -D__DEBUG=1 --debugger=pickit3  --double=24 --float=24 --opt=+asm,+asmfile,-speed,+space,-debug,-local --addrqual=ignore --mode=free -P -N255 --warn=-3 --asmlist -DXPRJ_default=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-osccal,-resetbits,-download,-stackcall,+clib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/sources/uart.p1  sources/uart.c 
+	@-${MV} ${OBJECTDIR}/sources/uart.d ${OBJECTDIR}/sources/uart.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/sources/uart.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
+else
 ${OBJECTDIR}/sources/device.p1: sources/device.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/sources" 
 	@${RM} ${OBJECTDIR}/sources/device.p1.d 
@@ -175,14 +167,6 @@ ${OBJECTDIR}/sources/device.p1: sources/device.c  nbproject/Makefile-${CND_CONF}
 	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  --double=24 --float=24 --opt=+asm,+asmfile,-speed,+space,-debug,-local --addrqual=ignore --mode=free -P -N255 --warn=-3 --asmlist -DXPRJ_default=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-osccal,-resetbits,-download,-stackcall,+clib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/sources/device.p1  sources/device.c 
 	@-${MV} ${OBJECTDIR}/sources/device.d ${OBJECTDIR}/sources/device.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/sources/device.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
-${OBJECTDIR}/sources/process.p1: sources/process.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/sources" 
-	@${RM} ${OBJECTDIR}/sources/process.p1.d 
-	@${RM} ${OBJECTDIR}/sources/process.p1 
-	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  --double=24 --float=24 --opt=+asm,+asmfile,-speed,+space,-debug,-local --addrqual=ignore --mode=free -P -N255 --warn=-3 --asmlist -DXPRJ_default=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-osccal,-resetbits,-download,-stackcall,+clib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/sources/process.p1  sources/process.c 
-	@-${MV} ${OBJECTDIR}/sources/process.d ${OBJECTDIR}/sources/process.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/sources/process.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 ${OBJECTDIR}/sources/lcd.p1: sources/lcd.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/sources" 
@@ -192,13 +176,13 @@ ${OBJECTDIR}/sources/lcd.p1: sources/lcd.c  nbproject/Makefile-${CND_CONF}.mk
 	@-${MV} ${OBJECTDIR}/sources/lcd.d ${OBJECTDIR}/sources/lcd.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/sources/lcd.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/sources/rotenc.p1: sources/rotenc.c  nbproject/Makefile-${CND_CONF}.mk
+${OBJECTDIR}/sources/main.p1: sources/main.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/sources" 
-	@${RM} ${OBJECTDIR}/sources/rotenc.p1.d 
-	@${RM} ${OBJECTDIR}/sources/rotenc.p1 
-	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  --double=24 --float=24 --opt=+asm,+asmfile,-speed,+space,-debug,-local --addrqual=ignore --mode=free -P -N255 --warn=-3 --asmlist -DXPRJ_default=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-osccal,-resetbits,-download,-stackcall,+clib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/sources/rotenc.p1  sources/rotenc.c 
-	@-${MV} ${OBJECTDIR}/sources/rotenc.d ${OBJECTDIR}/sources/rotenc.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/sources/rotenc.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	@${RM} ${OBJECTDIR}/sources/main.p1.d 
+	@${RM} ${OBJECTDIR}/sources/main.p1 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  --double=24 --float=24 --opt=+asm,+asmfile,-speed,+space,-debug,-local --addrqual=ignore --mode=free -P -N255 --warn=-3 --asmlist -DXPRJ_default=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-osccal,-resetbits,-download,-stackcall,+clib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/sources/main.p1  sources/main.c 
+	@-${MV} ${OBJECTDIR}/sources/main.d ${OBJECTDIR}/sources/main.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/sources/main.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 ${OBJECTDIR}/sources/manualmode.p1: sources/manualmode.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/sources" 
@@ -208,13 +192,21 @@ ${OBJECTDIR}/sources/manualmode.p1: sources/manualmode.c  nbproject/Makefile-${C
 	@-${MV} ${OBJECTDIR}/sources/manualmode.d ${OBJECTDIR}/sources/manualmode.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/sources/manualmode.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/sources/uart.p1: sources/uart.c  nbproject/Makefile-${CND_CONF}.mk
+${OBJECTDIR}/sources/process.p1: sources/process.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/sources" 
-	@${RM} ${OBJECTDIR}/sources/uart.p1.d 
-	@${RM} ${OBJECTDIR}/sources/uart.p1 
-	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  --double=24 --float=24 --opt=+asm,+asmfile,-speed,+space,-debug,-local --addrqual=ignore --mode=free -P -N255 --warn=-3 --asmlist -DXPRJ_default=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-osccal,-resetbits,-download,-stackcall,+clib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/sources/uart.p1  sources/uart.c 
-	@-${MV} ${OBJECTDIR}/sources/uart.d ${OBJECTDIR}/sources/uart.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/sources/uart.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	@${RM} ${OBJECTDIR}/sources/process.p1.d 
+	@${RM} ${OBJECTDIR}/sources/process.p1 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  --double=24 --float=24 --opt=+asm,+asmfile,-speed,+space,-debug,-local --addrqual=ignore --mode=free -P -N255 --warn=-3 --asmlist -DXPRJ_default=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-osccal,-resetbits,-download,-stackcall,+clib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/sources/process.p1  sources/process.c 
+	@-${MV} ${OBJECTDIR}/sources/process.d ${OBJECTDIR}/sources/process.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/sources/process.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/sources/rotenc.p1: sources/rotenc.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/sources" 
+	@${RM} ${OBJECTDIR}/sources/rotenc.p1.d 
+	@${RM} ${OBJECTDIR}/sources/rotenc.p1 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  --double=24 --float=24 --opt=+asm,+asmfile,-speed,+space,-debug,-local --addrqual=ignore --mode=free -P -N255 --warn=-3 --asmlist -DXPRJ_default=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-osccal,-resetbits,-download,-stackcall,+clib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/sources/rotenc.p1  sources/rotenc.c 
+	@-${MV} ${OBJECTDIR}/sources/rotenc.d ${OBJECTDIR}/sources/rotenc.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/sources/rotenc.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 ${OBJECTDIR}/sources/timer0.p1: sources/timer0.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/sources" 
@@ -231,6 +223,14 @@ ${OBJECTDIR}/sources/timer2.p1: sources/timer2.c  nbproject/Makefile-${CND_CONF}
 	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  --double=24 --float=24 --opt=+asm,+asmfile,-speed,+space,-debug,-local --addrqual=ignore --mode=free -P -N255 --warn=-3 --asmlist -DXPRJ_default=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-osccal,-resetbits,-download,-stackcall,+clib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/sources/timer2.p1  sources/timer2.c 
 	@-${MV} ${OBJECTDIR}/sources/timer2.d ${OBJECTDIR}/sources/timer2.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/sources/timer2.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/sources/uart.p1: sources/uart.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/sources" 
+	@${RM} ${OBJECTDIR}/sources/uart.p1.d 
+	@${RM} ${OBJECTDIR}/sources/uart.p1 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  --double=24 --float=24 --opt=+asm,+asmfile,-speed,+space,-debug,-local --addrqual=ignore --mode=free -P -N255 --warn=-3 --asmlist -DXPRJ_default=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-osccal,-resetbits,-download,-stackcall,+clib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/sources/uart.p1  sources/uart.c 
+	@-${MV} ${OBJECTDIR}/sources/uart.d ${OBJECTDIR}/sources/uart.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/sources/uart.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 endif
 
