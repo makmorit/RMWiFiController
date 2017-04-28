@@ -33,6 +33,10 @@
 //
 static void setup()
 {
+    // EXTOSC is explicitly enabled, 
+    // operating as specified by FEXTOSC
+    OSCENbits.EXTOEN = 1;
+
     setup_port();
     setup_timer0();
     setup_timer2();
@@ -64,9 +68,9 @@ void main()
     // 初期化処理
     //   TIMER 0, CCP, UART, LCD
     timer0_init();
-    timer2_init();
     uart_init();
     lcd_init();
+    timer2_init();
     
     // 主処理ループで使用される変数の初期化
     process_init();
