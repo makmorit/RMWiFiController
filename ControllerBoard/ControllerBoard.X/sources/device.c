@@ -129,7 +129,7 @@ void setup_timer2()
     CCP1CONbits.MODE = 0b1111; // 1111 = PWM mode
 
     // CCP1 デューティ設定
-    //   CCPR1L に8ビット分の値が設定される
+    //   CCPR1H に8ビット分の値が設定される
     //   PR2(タイマー２周期レジスター)初期値<--PWM周期
     CCPR1H = 0;
     PR2    = 160;
