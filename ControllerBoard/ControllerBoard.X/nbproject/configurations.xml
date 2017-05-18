@@ -6,13 +6,13 @@
                    projectFiles="true">
       <itemPath>sources/common.h</itemPath>
       <itemPath>sources/device.h</itemPath>
-      <itemPath>sources/process.h</itemPath>
       <itemPath>sources/lcd.h</itemPath>
-      <itemPath>sources/rotenc.h</itemPath>
       <itemPath>sources/manualmode.h</itemPath>
-      <itemPath>sources/uart.h</itemPath>
+      <itemPath>sources/process.h</itemPath>
+      <itemPath>sources/rotenc.h</itemPath>
       <itemPath>sources/timer0.h</itemPath>
       <itemPath>sources/timert2.h</itemPath>
+      <itemPath>sources/uart.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -21,15 +21,15 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
-      <itemPath>sources/main.c</itemPath>
       <itemPath>sources/device.c</itemPath>
-      <itemPath>sources/process.c</itemPath>
       <itemPath>sources/lcd.c</itemPath>
-      <itemPath>sources/rotenc.c</itemPath>
+      <itemPath>sources/main.c</itemPath>
       <itemPath>sources/manualmode.c</itemPath>
-      <itemPath>sources/uart.c</itemPath>
+      <itemPath>sources/process.c</itemPath>
+      <itemPath>sources/rotenc.c</itemPath>
       <itemPath>sources/timer0.c</itemPath>
       <itemPath>sources/timer2.c</itemPath>
+      <itemPath>sources/uart.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -45,7 +45,7 @@
     <conf name="default" type="2">
       <toolsSet>
         <developmentServer>localhost</developmentServer>
-        <targetDevice>PIC16F1938</targetDevice>
+        <targetDevice>PIC16F18857</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
         <platformTool>PICkit3PlatformTool</platformTool>
@@ -165,7 +165,7 @@
         <property key="memories.instruction.ram.ranges"
                   value="${memories.instruction.ram.ranges}"/>
         <property key="memories.programmemory" value="true"/>
-        <property key="memories.programmemory.ranges" value="0-3fff"/>
+        <property key="memories.programmemory.ranges" value="0-7fff"/>
         <property key="poweroptions.powerenable" value="true"/>
         <property key="programmertogo.imagename" value=""/>
         <property key="programoptions.donoteraseauxmem" value="false"/>

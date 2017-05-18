@@ -7,23 +7,25 @@
 #include "lcd.h"
 
 // CONFIG1
-#pragma config FOSC = HS // 20MHz
-#pragma config WDTE = OFF
+#pragma config FCMEN = OFF
+#pragma config CSWEN = OFF
+#pragma config CLKOUTEN = OFF
+#pragma config RSTOSC = EXT1X // External Oscillator no PLL
+#pragma config FEXTOSC = HS   // External Oscillator 20MHz
+// CONFIG2
+#pragma config STVREN = ON
+#pragma config BORV = 1
+#pragma config BOREN = ON
 #pragma config PWRTE = ON
 #pragma config MCLRE = OFF
-#pragma config CP = OFF
-#pragma config CPD = OFF
-#pragma config BOREN = ON
-#pragma config CLKOUTEN = OFF
-#pragma config IESO = OFF
-#pragma config FCMEN = OFF
-
-// CONFIG2
-#pragma config WRT = OFF
-#pragma config PLLEN = OFF
-#pragma config STVREN = ON
-#pragma config BORV = HI
+// CONFIG3
+#pragma config WDTE = OFF
+// CONFIG4
 #pragma config LVP = OFF
+#pragma config WRT = OFF
+// CONFIG5
+#pragma config CPD = OFF
+#pragma config CP = OFF
 
 //
 // 各種設定
@@ -31,6 +33,10 @@
 //
 static void setup()
 {
+    // EXTOSC is explicitly enabled, 
+    // operating as specified by FEXTOSC
+    OSCENbits.EXTOEN = 1;
+
     setup_port();
     setup_timer0();
     setup_timer2();
@@ -62,9 +68,9 @@ void main()
     // 初期化処理
     //   TIMER 0, CCP, UART, LCD
     timer0_init();
-    timer2_init();
     uart_init();
     lcd_init();
+    timer2_init();
     
     // 主処理ループで使用される変数の初期化
     process_init();

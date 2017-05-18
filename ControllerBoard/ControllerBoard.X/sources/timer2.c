@@ -4,14 +4,15 @@
 
 void timer2_init()
 {
-    // TIMER2 on prescale=1
-    // TIMER2スタート（onビットを１）
-    T2CON = 0b100;
+    // TIMER2開始
+    TMR2IF = 0;
+    T2CONbits.ON = 1;
 }
 
 void timer2_set_ccpr1(unsigned char v) 
 {
-    // CCP に値（デューティー比）を設定
+    // CCP1 に値（デューティー比）を設定
     //   v = 0-100 の値
-    CCPR1L = PR2 * v / 100;
+    //   CCPR1H = 0-160(PR2) の値
+    CCPR1H = PR2 * v / 100;
 }
