@@ -15,28 +15,32 @@ WiFiServerProcess::WiFiServerProcess() {
 }
 
 void WiFiServerProcess::setup(SoftwareSerial *ss) {
-    int led = GPIO_LOW;
+    // ソフトウェアシリアルの参照を保持
+    swSerial = ss;
 
-    // Connect to WiFi network
-    WiFi.begin(WIFI_SSID, WIFI_PSWD);
+    // サーバー起動済みインジケーターを消灯
+    digitalWrite(PIN_LED_CONNECTING, GPIO_LOW);
 
-    // Wait for connected
-    while (WiFi.status() != WL_CONNECTED) {
-        led = (led == GPIO_LOW) ? GPIO_HIGH : GPIO_LOW;
-        digitalWrite(PIN_LED_CONNECTING, led);
-        delay(WIFI_SVR_POLLING_INTMS);
-    }
+    // ソフトアクセスポイントを設定／起動
+    WiFi.begin();
+    WiFi.softAP(WIFI_SSID, WIFI_PSWD);
+    WiFi.softAPConfig(WIFI_SVR_IPADDR_FN, WiFi.gatewayIP(), WiFi.subnetMask());
+    IPAddress myIP = WiFi.softAPIP();
+    delay(WIFI_SVR_BEGIN_INTMS);
 
-    // Begin server with static IPAddress
-    WiFi.config(WIFI_SVR_IPADDR_FN, WiFi.gatewayIP(), WiFi.subnetMask());
+    // HTTPサーバーの起動
     wiFiServer->begin();
-  delay(WIFI_SVR_BEGIN_INTMS);
+    delay(WIFI_SVR_BEGIN_INTMS);
 
-    // prepare UART TX for debug
-  swSerial = ss;
-
-    // end setup
+    // サーバー起動済みインジケーターを点灯
     digitalWrite(PIN_LED_CONNECTING, GPIO_HIGH);
+
+    // ハードウェアUARTに起動情報をプリント
+    Serial.println();
+    Serial.print("WiFiServerProcess::setup: Access point configured: IP address=");
+    Serial.println(myIP);
+    Serial.print("WiFiServerProcess::setup: HTTP server started: Port no=");
+    Serial.println(WIFI_SVR_PORTNO);
 }
 
 String WiFiServerProcess::readRequest(WiFiClient *client) {
