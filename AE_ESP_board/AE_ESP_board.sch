@@ -465,16 +465,27 @@ type 0204, grid 5 mm</description>
 <package name="SIP3">
 <description>&lt;b&gt;INNOLINE DC/DC-Converter&lt;/b&gt; 1.0 AMP SIP3 Single Output&lt;p&gt;
 Source: &lt;a href="http://www.mikrocontroller.net/attachment/150645/157764-da-01-en-DC_DC_WANDLER_R_78C5_0_1_0.pdf"&gt; Data sheet &lt;/a&gt;</description>
-<pad name="1" x="3.302" y="2.286" drill="1" diameter="1.6" shape="long" rot="R90"/>
-<pad name="2" x="5.842" y="2.286" drill="1" diameter="1.6" shape="long" rot="R90"/>
-<pad name="3" x="8.382" y="2.286" drill="1" diameter="1.6" shape="long" rot="R90"/>
-<wire x1="0.1452" y1="0.132" x2="11.5388" y2="0.132" width="0.2032" layer="21"/>
-<wire x1="11.5388" y1="0.132" x2="11.5388" y2="7.456" width="0.2032" layer="21"/>
-<wire x1="11.5388" y1="7.456" x2="0.1452" y2="7.456" width="0.2032" layer="21"/>
-<wire x1="0.1452" y1="7.456" x2="0.1452" y2="0.132" width="0.2032" layer="21"/>
-<text x="0.127" y="-1.524" size="1.27" layer="25">&gt;NAME</text>
-<text x="0.762" y="4.826" size="1.27" layer="27">&gt;VALUE</text>
-<circle x="0.762" y="1.016" radius="0.406109375" width="0" layer="21"/>
+<pad name="1" x="0" y="0" drill="1" diameter="1.6" shape="long" rot="R90"/>
+<pad name="2" x="2.54" y="0" drill="1" diameter="1.6" shape="long" rot="R90"/>
+<pad name="3" x="5.08" y="0" drill="1" diameter="1.6" shape="long" rot="R90"/>
+<wire x1="-3.1568" y1="-2.154" x2="8.2368" y2="-2.154" width="0.2032" layer="21"/>
+<wire x1="8.2368" y1="-2.154" x2="8.2368" y2="5.17" width="0.2032" layer="21"/>
+<wire x1="8.2368" y1="5.17" x2="-3.1568" y2="5.17" width="0.2032" layer="21"/>
+<wire x1="-3.1568" y1="5.17" x2="-3.1568" y2="-2.154" width="0.2032" layer="21"/>
+<text x="-3.175" y="-3.81" size="1.27" layer="25">&gt;NAME</text>
+<text x="-2.54" y="2.54" size="1.27" layer="27">&gt;VALUE</text>
+<circle x="-2.54" y="-1.27" radius="0.406109375" width="0" layer="21"/>
+</package>
+<package name="ELECAP_D5_100MIL">
+<circle x="0" y="0" radius="2.667" width="0.1524" layer="21"/>
+<pad name="-" x="1.27" y="0" drill="0.8" diameter="1.4" shape="long" rot="R90"/>
+<pad name="+" x="-1.27" y="0" drill="0.8" diameter="1.4" shape="long" rot="R90"/>
+<text x="2.8575" y="1.5875" size="1.27" layer="25" ratio="10">&gt;NAME</text>
+<text x="2.413" y="-2.413" size="1.27" layer="27" ratio="10">&gt;VALUE</text>
+<wire x1="-3.1465" y1="2.0875" x2="-2.6385" y2="2.0875" width="0.3048" layer="21"/>
+<wire x1="-2.6385" y1="1.5795" x2="-2.6385" y2="2.0875" width="0.3048" layer="21"/>
+<wire x1="-2.6385" y1="2.0875" x2="-2.1305" y2="2.0875" width="0.3048" layer="21"/>
+<wire x1="-2.6385" y1="2.0875" x2="-2.6385" y2="2.5955" width="0.3048" layer="21"/>
 </package>
 </packages>
 <symbols>
@@ -736,10 +747,10 @@ Source: &lt;a href="http://www.mikrocontroller.net/attachment/150645/157764-da-0
 <devices>
 <device name="" package="B3F-10XX">
 <connects>
-<connect gate="1" pin="P" pad="3"/>
-<connect gate="1" pin="P1" pad="4"/>
-<connect gate="1" pin="S" pad="1"/>
-<connect gate="1" pin="S1" pad="2"/>
+<connect gate="1" pin="P" pad="1"/>
+<connect gate="1" pin="P1" pad="3"/>
+<connect gate="1" pin="S" pad="2"/>
+<connect gate="1" pin="S1" pad="4"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -763,6 +774,15 @@ Source: &lt;a href="http://www.mikrocontroller.net/attachment/150645/157764-da-0
 </technologies>
 </device>
 <device name="_200MIL" package="ELECAP_200MIL">
+<connects>
+<connect gate="G$1" pin="+" pad="+"/>
+<connect gate="G$1" pin="-" pad="-"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="_D5_100MIL" package="ELECAP_D5_100MIL">
 <connects>
 <connect gate="G$1" pin="+" pad="+"/>
 <connect gate="G$1" pin="-" pad="-"/>
@@ -895,11 +915,23 @@ package type P</description>
 <pad name="16" x="5.08" y="7.62" drill="0.8128" shape="long" rot="R90"/>
 <pad name="17" x="2.54" y="7.62" drill="0.8128" shape="long" rot="R90"/>
 <pad name="18" x="0" y="7.62" drill="0.8128" shape="long" rot="R90"/>
-<text x="-1.7018" y="1.27" size="1.778" layer="25" ratio="10" rot="R90">&gt;NAME</text>
+<text x="24.2982" y="-0.73" size="1.778" layer="25" ratio="10" rot="R90">&gt;NAME</text>
 <text x="0" y="2.921" size="1.778" layer="27" ratio="10">&gt;VALUE</text>
-<text x="-2.54" y="-1.27" size="1.27" layer="21">1</text>
-<text x="22.225" y="-1.27" size="1.27" layer="21">9</text>
-<text x="22.225" y="6.35" size="1.27" layer="21">10</text>
+<text x="-0.635" y="-4.175" size="1.27" layer="21">1</text>
+<text x="19.685" y="-4.175" size="1.27" layer="21">9</text>
+<text x="19.05" y="10.525" size="1.27" layer="21">10</text>
+<text x="-1.27" y="10.525" size="1.27" layer="21">18</text>
+<wire x1="-2" y1="-2.19" x2="22" y2="-2.19" width="0.127" layer="21"/>
+<wire x1="-2" y1="9.81" x2="22" y2="9.81" width="0.127" layer="21"/>
+<wire x1="22" y1="9.81" x2="22" y2="-2.19" width="0.127" layer="21"/>
+<wire x1="-2" y1="9.81" x2="-2" y2="18.31" width="0.127" layer="21"/>
+<wire x1="-2" y1="-10.69" x2="-2" y2="-2.19" width="0.127" layer="21"/>
+<wire x1="-2" y1="18.31" x2="-22" y2="18.31" width="0.127" layer="21"/>
+<wire x1="-22" y1="18.31" x2="-28" y2="18.31" width="0.127" layer="21"/>
+<wire x1="-2" y1="-10.69" x2="-22" y2="-10.69" width="0.127" layer="21"/>
+<wire x1="-22" y1="-10.69" x2="-28" y2="-10.69" width="0.127" layer="21"/>
+<wire x1="-28" y1="-10.69" x2="-28" y2="18.31" width="0.127" layer="21"/>
+<wire x1="-22" y1="-10.69" x2="-22" y2="18.31" width="0.127" layer="21"/>
 </package>
 <package name="UART_IF_3PIN">
 <description>&lt;b&gt;PIN HEADER&lt;/b&gt;</description>
@@ -1107,7 +1139,7 @@ package type P</description>
 <part name="SW1" library="Parts" deviceset="10-XX" device=""/>
 <part name="Q1" library="Parts" deviceset="2N7000" device=""/>
 <part name="R4" library="Parts" deviceset="RESISTOR" device="_200MIL" value="10k"/>
-<part name="C1" library="Parts" deviceset="ELECAP" device="_200MIL" value="35V47uF"/>
+<part name="C1" library="Parts" deviceset="ELECAP" device="_D5_100MIL" value="35V47uF"/>
 <part name="P+1" library="Supply" deviceset="+12V" device=""/>
 <part name="H1" library="Generic" deviceset="MOUNT_HOLE" device="_3.2"/>
 <part name="H2" library="Generic" deviceset="MOUNT_HOLE" device="_3.2"/>
@@ -1238,7 +1270,8 @@ Wi-Fiモジュールにより
 <wire x1="124.46" y1="71.12" x2="124.46" y2="76.2" width="0.1524" layer="91"/>
 <junction x="124.46" y="71.12"/>
 <pinref part="SW1" gate="1" pin="S1"/>
-<wire x1="165.1" y1="78.74" x2="165.1" y2="71.12" width="0.1524" layer="91"/>
+<wire x1="165.1" y1="78.74" x2="165.1" y2="76.2" width="0.1524" layer="91"/>
+<wire x1="165.1" y1="76.2" x2="165.1" y2="71.12" width="0.1524" layer="91"/>
 <wire x1="165.1" y1="71.12" x2="157.48" y2="71.12" width="0.1524" layer="91"/>
 <wire x1="157.48" y1="71.12" x2="149.86" y2="71.12" width="0.1524" layer="91"/>
 <wire x1="149.86" y1="71.12" x2="124.46" y2="71.12" width="0.1524" layer="91"/>
@@ -1267,6 +1300,10 @@ Wi-Fiモジュールにより
 <wire x1="200.66" y1="96.52" x2="200.66" y2="71.12" width="0.1524" layer="91"/>
 <pinref part="CN1" gate="G$1" pin="GND"/>
 <wire x1="50.8" y1="93.98" x2="60.96" y2="93.98" width="0.1524" layer="91"/>
+<pinref part="SW1" gate="1" pin="S"/>
+<wire x1="167.64" y1="78.74" x2="167.64" y2="76.2" width="0.1524" layer="91"/>
+<wire x1="167.64" y1="76.2" x2="165.1" y2="76.2" width="0.1524" layer="91"/>
+<junction x="165.1" y="76.2"/>
 </segment>
 <segment>
 <wire x1="116.84" y1="25.4" x2="129.54" y2="25.4" width="0.1524" layer="91"/>
@@ -1372,10 +1409,15 @@ Wi-Fiモジュールにより
 <wire x1="165.1" y1="119.38" x2="137.16" y2="119.38" width="0.1524" layer="91"/>
 <pinref part="SW1" gate="1" pin="P1"/>
 <wire x1="137.16" y1="119.38" x2="132.08" y2="119.38" width="0.1524" layer="91"/>
-<wire x1="165.1" y1="119.38" x2="165.1" y2="88.9" width="0.1524" layer="91"/>
+<wire x1="165.1" y1="119.38" x2="165.1" y2="91.44" width="0.1524" layer="91"/>
 <pinref part="R2" gate="G$1" pin="1"/>
+<wire x1="165.1" y1="91.44" x2="165.1" y2="88.9" width="0.1524" layer="91"/>
 <wire x1="137.16" y1="139.7" x2="137.16" y2="119.38" width="0.1524" layer="91"/>
 <junction x="137.16" y="119.38"/>
+<pinref part="SW1" gate="1" pin="P"/>
+<wire x1="167.64" y1="88.9" x2="167.64" y2="91.44" width="0.1524" layer="91"/>
+<wire x1="167.64" y1="91.44" x2="165.1" y2="91.44" width="0.1524" layer="91"/>
+<junction x="165.1" y="91.44"/>
 </segment>
 </net>
 <net name="LED_CONNECTING" class="0">
