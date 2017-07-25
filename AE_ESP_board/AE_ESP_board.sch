@@ -238,10 +238,10 @@ DIN A4, landscape with location and doc. field</description>
 <description>手はんだ用パターン 2.0mm×1.2mm（0805）</description>
 <wire x1="-0.381" y1="0.66" x2="0.381" y2="0.66" width="0.1016" layer="51"/>
 <wire x1="-0.356" y1="-0.66" x2="0.381" y2="-0.66" width="0.1016" layer="51"/>
-<smd name="1" x="-1.3" y="0" dx="2" dy="1.5" layer="1"/>
-<smd name="2" x="1.3" y="0" dx="2" dy="1.5" layer="1"/>
-<text x="-1.27" y="1.27" size="1.27" layer="25">&gt;NAME</text>
-<text x="-1.27" y="-2.54" size="1.27" layer="27">&gt;VALUE</text>
+<smd name="1" x="-1.3" y="0" dx="2" dy="1.2" layer="1"/>
+<smd name="2" x="1.3" y="0" dx="2" dy="1.2" layer="1"/>
+<text x="-2.2225" y="0.9525" size="0.7112" layer="25">&gt;NAME</text>
+<text x="-2.2225" y="-1.5875" size="0.7112" layer="27">&gt;VALUE</text>
 <rectangle x1="-1.0922" y1="-0.7239" x2="-0.3421" y2="0.7262" layer="51"/>
 <rectangle x1="0.3556" y1="-0.7239" x2="1.1057" y2="0.7262" layer="51"/>
 </package>
@@ -346,9 +346,9 @@ grid 5.08 mm</description>
 <pad name="1" x="0" y="0" drill="0.8128" shape="long" rot="R90"/>
 <pad name="3" x="5.08" y="0" drill="0.8128" shape="long" rot="R90"/>
 <pad name="2" x="2.54" y="0" drill="0.8128" shape="long" rot="R90"/>
-<text x="0" y="2.2225" size="1.27" layer="25" ratio="10">&gt;NAME</text>
-<text x="0" y="-3.302" size="1.27" layer="27" ratio="10">&gt;VALUE</text>
-<text x="-1.27" y="-2.54" size="0.8128" layer="21">1</text>
+<text x="-0.635" y="1.905" size="0.8128" layer="25" ratio="10">&gt;NAME</text>
+<text x="0.9525" y="-2.9845" size="0.8128" layer="27" ratio="10">&gt;VALUE</text>
+<text x="-0.3175" y="-2.54" size="0.8128" layer="21">1</text>
 </package>
 <package name="JP1">
 <description>&lt;b&gt;JUMPER&lt;/b&gt;</description>
@@ -368,8 +368,8 @@ grid 5.08 mm</description>
 <wire x1="-1.016" y1="-1.27" x2="1.016" y2="-1.27" width="0.1524" layer="21"/>
 <pad name="1" x="0" y="0" drill="0.9144" shape="long"/>
 <pad name="2" x="0" y="2.54" drill="0.9144" shape="long"/>
-<text x="-1.651" y="-1.27" size="1.27" layer="25" ratio="10" rot="R90">&gt;NAME</text>
-<text x="2.921" y="-1.27" size="1.27" layer="27" ratio="10" rot="R90">&gt;VALUE</text>
+<text x="-1.9685" y="-1.27" size="0.7112" layer="25" ratio="10" rot="R90">&gt;NAME</text>
+<text x="2.6035" y="-1.27" size="0.7112" layer="27" ratio="10" rot="R90">&gt;VALUE</text>
 <rectangle x1="-0.3048" y1="2.2352" x2="0.3048" y2="2.8448" layer="51"/>
 <rectangle x1="-0.3048" y1="-0.3048" x2="0.3048" y2="0.3048" layer="51"/>
 </package>
@@ -480,12 +480,37 @@ Source: &lt;a href="http://www.mikrocontroller.net/attachment/150645/157764-da-0
 <circle x="0" y="0" radius="2.667" width="0.1524" layer="21"/>
 <pad name="-" x="1.27" y="0" drill="0.8" diameter="1.4" shape="long" rot="R90"/>
 <pad name="+" x="-1.27" y="0" drill="0.8" diameter="1.4" shape="long" rot="R90"/>
-<text x="2.8575" y="1.5875" size="1.27" layer="25" ratio="10">&gt;NAME</text>
-<text x="2.413" y="-2.413" size="1.27" layer="27" ratio="10">&gt;VALUE</text>
+<text x="2.8575" y="1.5875" size="1.016" layer="25" ratio="10">&gt;NAME</text>
+<text x="2.413" y="-2.413" size="1.016" layer="27" ratio="10">&gt;VALUE</text>
 <wire x1="-3.1465" y1="2.0875" x2="-2.6385" y2="2.0875" width="0.3048" layer="21"/>
 <wire x1="-2.6385" y1="1.5795" x2="-2.6385" y2="2.0875" width="0.3048" layer="21"/>
 <wire x1="-2.6385" y1="2.0875" x2="-2.1305" y2="2.0875" width="0.3048" layer="21"/>
 <wire x1="-2.6385" y1="2.0875" x2="-2.6385" y2="2.5955" width="0.3048" layer="21"/>
+</package>
+<package name="CHIPLED_0805">
+<description>&lt;b&gt;CHIPLED&lt;/b&gt;&lt;p&gt;
+0805 (2.0 mm x 1.2 mm) 手はんだ用パターン</description>
+<wire x1="0.925" y1="0.35" x2="0.925" y2="-0.35" width="0.1016" layer="51" curve="162.394521"/>
+<wire x1="-0.925" y1="0.35" x2="-0.925" y2="-0.35" width="0.1016" layer="51" curve="-162.394521"/>
+<wire x1="0.525" y1="-0.575" x2="-0.525" y2="-0.575" width="0.1016" layer="51"/>
+<wire x1="-0.5" y1="0.575" x2="0.925" y2="0.575" width="0.1016" layer="51"/>
+<circle x="0.85" y="0.45" radius="0.103" width="0.1016" layer="51"/>
+<smd name="C" x="1.45" y="0" dx="1.2" dy="2" layer="1" rot="R270"/>
+<smd name="A" x="-1.45" y="0" dx="1.2" dy="2" layer="1" rot="R270"/>
+<text x="-2.54" y="0.9525" size="0.7112" layer="25">&gt;NAME</text>
+<text x="-2.54" y="-1.5875" size="0.7112" layer="27">&gt;VALUE</text>
+<rectangle x1="0.5875" y1="-0.7125" x2="0.9125" y2="-0.2125" layer="51" rot="R270"/>
+<rectangle x1="0.55" y1="0.125" x2="0.7" y2="0.375" layer="51" rot="R270"/>
+<rectangle x1="0.55" y1="-0.375" x2="0.7" y2="-0.125" layer="51" rot="R270"/>
+<rectangle x1="0.3875" y1="-0.0875" x2="0.7875" y2="0.0875" layer="51" rot="R270"/>
+<rectangle x1="-0.9125" y1="-0.7125" x2="-0.5875" y2="-0.2125" layer="51" rot="R270"/>
+<rectangle x1="-0.9125" y1="0.2125" x2="-0.5875" y2="0.7125" layer="51" rot="R270"/>
+<rectangle x1="-0.7" y1="-0.375" x2="-0.55" y2="-0.125" layer="51" rot="R270"/>
+<rectangle x1="-0.7" y1="0.125" x2="-0.55" y2="0.375" layer="51" rot="R270"/>
+<rectangle x1="-0.7875" y1="-0.0875" x2="-0.3875" y2="0.0875" layer="51" rot="R270"/>
+<rectangle x1="0.5" y1="0.3" x2="0.8" y2="0.6" layer="51" rot="R270"/>
+<rectangle x1="0.8" y1="0.425" x2="1.125" y2="0.5" layer="51" rot="R270"/>
+<wire x1="0.1778" y1="0.5334" x2="0.1778" y2="-0.5334" width="0.1778" layer="21"/>
 </package>
 </packages>
 <symbols>
@@ -633,6 +658,15 @@ Source: &lt;a href="http://www.mikrocontroller.net/attachment/150645/157764-da-0
 <connects>
 <connect gate="G$1" pin="A" pad="A"/>
 <connect gate="G$1" pin="C" pad="K"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="_0805" package="CHIPLED_0805">
+<connects>
+<connect gate="G$1" pin="A" pad="A"/>
+<connect gate="G$1" pin="C" pad="C"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -915,12 +949,12 @@ package type P</description>
 <pad name="16" x="5.08" y="7.62" drill="0.8128" shape="long" rot="R90"/>
 <pad name="17" x="2.54" y="7.62" drill="0.8128" shape="long" rot="R90"/>
 <pad name="18" x="0" y="7.62" drill="0.8128" shape="long" rot="R90"/>
-<text x="24.2982" y="-0.73" size="1.778" layer="25" ratio="10" rot="R90">&gt;NAME</text>
-<text x="0" y="2.921" size="1.778" layer="27" ratio="10">&gt;VALUE</text>
-<text x="-0.635" y="-4.175" size="1.27" layer="21">1</text>
-<text x="19.685" y="-4.175" size="1.27" layer="21">9</text>
-<text x="19.05" y="10.525" size="1.27" layer="21">10</text>
-<text x="-1.27" y="10.525" size="1.27" layer="21">18</text>
+<text x="-2.0543" y="0.54" size="1.27" layer="25" ratio="10" rot="R90">&gt;NAME</text>
+<text x="0" y="2.921" size="1.27" layer="27" ratio="10">&gt;VALUE</text>
+<text x="-0.3175" y="-3.2225" size="0.8128" layer="21">1</text>
+<text x="20.0025" y="-3.2225" size="0.8128" layer="21">9</text>
+<text x="19.685" y="9.89" size="0.8128" layer="21">10</text>
+<text x="-0.635" y="9.89" size="0.8128" layer="21">18</text>
 <wire x1="-2" y1="-2.19" x2="22" y2="-2.19" width="0.127" layer="21"/>
 <wire x1="-2" y1="9.81" x2="22" y2="9.81" width="0.127" layer="21"/>
 <wire x1="22" y1="9.81" x2="22" y2="-2.19" width="0.127" layer="21"/>
@@ -931,32 +965,32 @@ package type P</description>
 <wire x1="-2" y1="-10.69" x2="-22" y2="-10.69" width="0.127" layer="21"/>
 <wire x1="-22" y1="-10.69" x2="-28" y2="-10.69" width="0.127" layer="21"/>
 <wire x1="-28" y1="-10.69" x2="-28" y2="18.31" width="0.127" layer="21"/>
-<wire x1="-22" y1="-10.69" x2="-22" y2="18.31" width="0.127" layer="21"/>
+<wire x1="-22" y1="-10.69" x2="-22" y2="18.31" width="0.127" layer="51"/>
 </package>
 <package name="UART_IF_3PIN">
 <description>&lt;b&gt;PIN HEADER&lt;/b&gt;</description>
 <pad name="1" x="0" y="0" drill="1" diameter="1.6" shape="long" rot="R90"/>
 <pad name="2" x="2.54" y="0" drill="1" diameter="1.6" shape="long" rot="R90"/>
 <pad name="3" x="5.08" y="0" drill="1" diameter="1.6" shape="long" rot="R90"/>
-<text x="0" y="2.54" size="1.27" layer="25" ratio="10">&gt;NAME</text>
-<text x="0" y="-4.7625" size="1.27" layer="27">&gt;VALUE</text>
+<text x="-0.9525" y="2.2225" size="0.8128" layer="25" ratio="10">&gt;NAME</text>
+<text x="-1.27" y="-4.1275" size="0.8128" layer="27">&gt;VALUE</text>
 <rectangle x1="4.826" y1="-0.254" x2="5.334" y2="0.254" layer="51"/>
 <rectangle x1="2.286" y1="-0.254" x2="2.794" y2="0.254" layer="51"/>
 <rectangle x1="-0.254" y1="-0.254" x2="0.254" y2="0.254" layer="51"/>
-<text x="-1.27" y="-2.8575" size="0.8128" layer="21">GND</text>
-<text x="1.905" y="-2.8575" size="0.8128" layer="21">RX</text>
-<text x="4.445" y="-2.8575" size="0.8128" layer="21">TX</text>
+<text x="-1.27" y="-2.8575" size="0.7112" layer="21">GND</text>
+<text x="1.905" y="-2.8575" size="0.7112" layer="21">RX</text>
+<text x="4.445" y="-2.8575" size="0.7112" layer="21">TX</text>
 </package>
 <package name="HEADER_2PIN_POWER_IF">
 <description>&lt;b&gt;PIN HEADER&lt;/b&gt;</description>
 <pad name="1" x="0" y="0" drill="1" diameter="1.6" shape="long" rot="R90"/>
 <pad name="2" x="2.54" y="0" drill="1" diameter="1.6" shape="long" rot="R90"/>
-<text x="-1.3462" y="2.4638" size="1.27" layer="25" ratio="10">&gt;NAME</text>
-<text x="-1.27" y="-3.175" size="1.27" layer="27">&gt;VALUE</text>
+<text x="-1.0287" y="2.1463" size="0.8128" layer="25" ratio="10">&gt;NAME</text>
+<text x="-1.27" y="-4.7625" size="1.27" layer="27">&gt;VALUE</text>
 <rectangle x1="-0.254" y1="-0.254" x2="0.254" y2="0.254" layer="51"/>
 <rectangle x1="2.286" y1="-0.254" x2="2.794" y2="0.254" layer="51"/>
-<text x="4.1275" y="-1.27" size="1.27" layer="21">+</text>
-<text x="-4.572" y="-1.27" size="1.016" layer="21">GND</text>
+<text x="1.5875" y="-2.8575" size="0.7112" layer="21">VDD</text>
+<text x="-1.0795" y="-2.8575" size="0.7112" layer="21">GND</text>
 </package>
 </packages>
 <symbols>
@@ -1130,10 +1164,10 @@ package type P</description>
 <part name="R5" library="Parts" deviceset="RESISTOR" device="_200MIL" value="10k"/>
 <part name="R2" library="Parts" deviceset="RESISTOR" device="_200MIL" value="10k"/>
 <part name="R1" library="Parts" deviceset="RESISTOR" device="_200MIL" value="10k"/>
-<part name="D1" library="Parts" deviceset="LED" device="_5MM"/>
-<part name="D2" library="Parts" deviceset="LED" device="_5MM"/>
-<part name="R6" library="Parts" deviceset="RESISTOR" device="_200MIL" value="330"/>
-<part name="R7" library="Parts" deviceset="RESISTOR" device="_200MIL" value="330"/>
+<part name="D1" library="Parts" deviceset="LED" device="_0805" value="LED_0805"/>
+<part name="D2" library="Parts" deviceset="LED" device="_0805" value="LED_0805"/>
+<part name="R6" library="Parts" deviceset="RESISTOR" device="_0805" value="330"/>
+<part name="R7" library="Parts" deviceset="RESISTOR" device="_0805" value="330"/>
 <part name="GND12" library="Supply" deviceset="0V" device=""/>
 <part name="JP1" library="Parts" deviceset="JP1E" device="" value="PGM_MODE"/>
 <part name="SW1" library="Parts" deviceset="10-XX" device=""/>
@@ -1148,8 +1182,8 @@ package type P</description>
 <part name="CN3" library="PartsForProto" deviceset="POWER_IF" device=""/>
 <part name="JP2" library="Parts" deviceset="JP1E" device="" value="SERVER_MODE"/>
 <part name="R3" library="Parts" deviceset="RESISTOR" device="_200MIL" value="10k"/>
-<part name="R8" library="Parts" deviceset="RESISTOR" device="_200MIL" value="330"/>
-<part name="D3" library="Parts" deviceset="LED" device="_5MM"/>
+<part name="R8" library="Parts" deviceset="RESISTOR" device="_0805" value="330"/>
+<part name="D3" library="Parts" deviceset="LED" device="_0805" value="LED_0805"/>
 <part name="CN2" library="PartsForProto" deviceset="UART_IF" device="" value="HW_UART_IF"/>
 <part name="CN1" library="PartsForProto" deviceset="UART_IF" device="" value="SW_UART_IF"/>
 <part name="U2" library="Parts" deviceset="M78A*" device="R033-0.5"/>
