@@ -251,8 +251,8 @@ DIN A4, landscape with location and doc. field</description>
 <wire x1="-0.356" y1="-0.419" x2="0.356" y2="-0.419" width="0.1016" layer="51"/>
 <smd name="1" x="-1.1" y="0" dx="1.6" dy="1" layer="1"/>
 <smd name="2" x="1.1" y="0" dx="1.6" dy="1" layer="1"/>
-<text x="-0.635" y="1.27" size="1.27" layer="25">&gt;NAME</text>
-<text x="-0.635" y="-1.905" size="1.27" layer="27">&gt;VALUE</text>
+<text x="-0.635" y="1.27" size="0.8128" layer="25">&gt;NAME</text>
+<text x="-0.635" y="-1.905" size="0.8128" layer="27">&gt;VALUE</text>
 <rectangle x1="-0.8382" y1="-0.4699" x2="-0.3381" y2="0.4801" layer="51"/>
 <rectangle x1="0.3302" y1="-0.4699" x2="0.8303" y2="0.4801" layer="51"/>
 </package>
@@ -457,8 +457,8 @@ type 0204, grid 5 mm</description>
 <wire x1="1.778" y1="-0.635" x2="1.778" y2="0.635" width="0.1524" layer="51"/>
 <pad name="1" x="-2.54" y="0" drill="0.7" diameter="1.3"/>
 <pad name="2" x="2.54" y="0" drill="0.7" diameter="1.3"/>
-<text x="-2.54" y="1.27" size="0.9906" layer="25" ratio="10">&gt;NAME</text>
-<text x="-2.54" y="-2.54" size="0.9906" layer="27" ratio="10">&gt;VALUE</text>
+<text x="-2.54" y="1.27" size="0.8128" layer="25" ratio="10">&gt;NAME</text>
+<text x="-2.54" y="-2.54" size="0.8128" layer="27" ratio="10">&gt;VALUE</text>
 <rectangle x1="-2.032" y1="-0.254" x2="-1.778" y2="0.254" layer="51"/>
 <rectangle x1="1.778" y1="-0.254" x2="2.032" y2="0.254" layer="51"/>
 </package>
@@ -1166,8 +1166,8 @@ package type P</description>
 <part name="R1" library="Parts" deviceset="RESISTOR" device="_200MIL" value="10k"/>
 <part name="D1" library="Parts" deviceset="LED" device="_0805" value="LED_0805"/>
 <part name="D2" library="Parts" deviceset="LED" device="_0805" value="LED_0805"/>
-<part name="R6" library="Parts" deviceset="RESISTOR" device="_0805" value="330"/>
-<part name="R7" library="Parts" deviceset="RESISTOR" device="_0805" value="330"/>
+<part name="R6" library="Parts" deviceset="RESISTOR" device="_200MIL" value="330"/>
+<part name="R7" library="Parts" deviceset="RESISTOR" device="_200MIL" value="330"/>
 <part name="GND12" library="Supply" deviceset="0V" device=""/>
 <part name="JP1" library="Parts" deviceset="JP1E" device="" value="PGM_MODE"/>
 <part name="SW1" library="Parts" deviceset="10-XX" device=""/>
@@ -1182,7 +1182,7 @@ package type P</description>
 <part name="CN3" library="PartsForProto" deviceset="POWER_IF" device=""/>
 <part name="JP2" library="Parts" deviceset="JP1E" device="" value="SERVER_MODE"/>
 <part name="R3" library="Parts" deviceset="RESISTOR" device="_200MIL" value="10k"/>
-<part name="R8" library="Parts" deviceset="RESISTOR" device="_0805" value="330"/>
+<part name="R8" library="Parts" deviceset="RESISTOR" device="_200MIL" value="330"/>
 <part name="D3" library="Parts" deviceset="LED" device="_0805" value="LED_0805"/>
 <part name="CN2" library="PartsForProto" deviceset="UART_IF" device="" value="HW_UART_IF"/>
 <part name="CN1" library="PartsForProto" deviceset="UART_IF" device="" value="SW_UART_IF"/>
