@@ -512,6 +512,33 @@ Source: &lt;a href="http://www.mikrocontroller.net/attachment/150645/157764-da-0
 <rectangle x1="0.8" y1="0.425" x2="1.125" y2="0.5" layer="51" rot="R270"/>
 <wire x1="0.1778" y1="0.5334" x2="0.1778" y2="-0.5334" width="0.1778" layer="21"/>
 </package>
+<package name="LED3MM">
+<description>&lt;B&gt;LED&lt;/B&gt;&lt;p&gt;
+3 mm, round</description>
+<wire x1="1.5748" y1="-1.27" x2="1.5748" y2="1.27" width="0.254" layer="51"/>
+<wire x1="-1.524" y1="0" x2="-1.1708" y2="0.9756" width="0.1524" layer="51" curve="-39.80361"/>
+<wire x1="-1.524" y1="0" x2="-1.1391" y2="-1.0125" width="0.1524" layer="51" curve="41.633208"/>
+<wire x1="1.1571" y1="0.9918" x2="1.524" y2="0" width="0.1524" layer="51" curve="-40.601165"/>
+<wire x1="1.1708" y1="-0.9756" x2="1.524" y2="0" width="0.1524" layer="51" curve="39.80361"/>
+<wire x1="0" y1="1.524" x2="1.2401" y2="0.8858" width="0.1524" layer="21" curve="-54.461337"/>
+<wire x1="-1.2192" y1="0.9144" x2="0" y2="1.524" width="0.1524" layer="21" curve="-53.130102"/>
+<wire x1="0" y1="-1.524" x2="1.203" y2="-0.9356" width="0.1524" layer="21" curve="52.126876"/>
+<wire x1="-1.203" y1="-0.9356" x2="0" y2="-1.524" width="0.1524" layer="21" curve="52.126876"/>
+<wire x1="-0.635" y1="0" x2="0" y2="0.635" width="0.1524" layer="51" curve="-90"/>
+<wire x1="-1.016" y1="0" x2="0" y2="1.016" width="0.1524" layer="51" curve="-90"/>
+<wire x1="0" y1="-0.635" x2="0.635" y2="0" width="0.1524" layer="51" curve="90"/>
+<wire x1="0" y1="-1.016" x2="1.016" y2="0" width="0.1524" layer="51" curve="90"/>
+<wire x1="0" y1="2.032" x2="1.561" y2="1.3009" width="0.254" layer="21" curve="-50.193108"/>
+<wire x1="-1.7929" y1="0.9562" x2="0" y2="2.032" width="0.254" layer="21" curve="-61.926949"/>
+<wire x1="0" y1="-2.032" x2="1.5512" y2="-1.3126" width="0.254" layer="21" curve="49.763022"/>
+<wire x1="-1.7643" y1="-1.0082" x2="0" y2="-2.032" width="0.254" layer="21" curve="60.255215"/>
+<wire x1="-2.032" y1="0" x2="-1.7891" y2="0.9634" width="0.254" layer="51" curve="-28.301701"/>
+<wire x1="-2.032" y1="0" x2="-1.7306" y2="-1.065" width="0.254" layer="51" curve="31.60822"/>
+<pad name="A" x="-1.27" y="0" drill="0.8128" rot="R90"/>
+<pad name="K" x="1.27" y="0" drill="0.8128" rot="R90"/>
+<text x="-1.905" y="2.2225" size="0.8128" layer="25" ratio="10">&gt;NAME</text>
+<text x="-1.905" y="-3.175" size="0.8128" layer="27" ratio="10">&gt;VALUE</text>
+</package>
 </packages>
 <symbols>
 <symbol name="LED">
@@ -667,6 +694,15 @@ Source: &lt;a href="http://www.mikrocontroller.net/attachment/150645/157764-da-0
 <connects>
 <connect gate="G$1" pin="A" pad="A"/>
 <connect gate="G$1" pin="C" pad="C"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="_3MM" package="LED3MM">
+<connects>
+<connect gate="G$1" pin="A" pad="A"/>
+<connect gate="G$1" pin="C" pad="K"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -1164,8 +1200,8 @@ package type P</description>
 <part name="R5" library="Parts" deviceset="RESISTOR" device="_200MIL" value="10k"/>
 <part name="R2" library="Parts" deviceset="RESISTOR" device="_200MIL" value="10k"/>
 <part name="R1" library="Parts" deviceset="RESISTOR" device="_200MIL" value="10k"/>
-<part name="D1" library="Parts" deviceset="LED" device="_0805" value="LED_0805"/>
-<part name="D2" library="Parts" deviceset="LED" device="_0805" value="LED_0805"/>
+<part name="D1" library="Parts" deviceset="LED" device="_3MM" value="LED_3MM"/>
+<part name="D2" library="Parts" deviceset="LED" device="_3MM" value="LED_3MM"/>
 <part name="R6" library="Parts" deviceset="RESISTOR" device="_200MIL" value="330"/>
 <part name="R7" library="Parts" deviceset="RESISTOR" device="_200MIL" value="330"/>
 <part name="GND12" library="Supply" deviceset="0V" device=""/>
@@ -1183,7 +1219,7 @@ package type P</description>
 <part name="JP2" library="Parts" deviceset="JP1E" device="" value="SERVER_MODE"/>
 <part name="R3" library="Parts" deviceset="RESISTOR" device="_200MIL" value="10k"/>
 <part name="R8" library="Parts" deviceset="RESISTOR" device="_200MIL" value="330"/>
-<part name="D3" library="Parts" deviceset="LED" device="_0805" value="LED_0805"/>
+<part name="D3" library="Parts" deviceset="LED" device="_3MM" value="LED_3MM"/>
 <part name="CN2" library="PartsForProto" deviceset="UART_IF" device="" value="HW_UART_IF"/>
 <part name="CN1" library="PartsForProto" deviceset="UART_IF" device="" value="SW_UART_IF"/>
 <part name="U2" library="Parts" deviceset="M78A*" device="R033-0.5"/>
